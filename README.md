@@ -17,6 +17,7 @@ I plan on having a similar interface to Burp Suite Decoder, but with a few more 
 * Unicode Wide
 * URL - Key Characters
 * URL - All Characters
+* URL - Encode spaces as `+` or as `%20`
 * Hex - with \x
 * Hex - with 0x
 * Octal
@@ -29,3 +30,12 @@ I plan on having a similar interface to Burp Suite Decoder, but with a few more 
 * I want the user to be able to highlight specific text to be encoded in a specific format. The idea is that different parts of the text can be encoded in different ways at the same time. For example, given this text: `Here is some sample text`; I would like to have the ability to highlight the word `Here` and set that to encode as Base64 and then highlight the word `sample` and set that to encode as HTML.
 * I want the tool to encode/decode automatically (via ajax) as soon as a scheme is chosen, while still being able to change the encoding/decoding as desired.
 * An output box should appear as soon as an encoding/decoding is done displaying the encoded/decoded text. There should be no limit on the number of times a specific text can be encoded/decoded.
+
+## Build Steps
+
+1. Implement enough JavaScript so that the text is reflected into a new textbox when an encoding is selected.
+2. Implement the Python needed to perform all/most of the encodings.
+3. Hook up the Python to the JavaScript so the text reflected is now encoded.
+4. Add ability to encode the text an infinite number of times.
+5. Add decode ability.
+6. Make the encoding/decoding cascade so that a change in the top box is reflected in the last box.
